@@ -2,6 +2,7 @@ package com.fekra.userapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,11 +15,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private String MY_GLOBAL_PREFS= "MY_GLOBAL_PREFS";
+
+    ImageView iv_profile;
+    TextView tv_name,tv_mail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +35,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -45,10 +45,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        iv_profile=findViewById(R.id.iv_profile_image);
+        tv_name=findViewById(R.id.tv_profile_name);
+        tv_mail = findViewById(R.id.tv_email);
+
 
         SharedPreferences prefs = getSharedPreferences(MY_GLOBAL_PREFS, MODE_PRIVATE);
         if (!prefs.getBoolean("Is_Logged_In", false)) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }else{
+            Picasso.get().load(Uri.decode(prefs.getString("User_pp",null))).into(iv_profile);
+            tv_name.setText(prefs.getString("User_name","null"));
+            tv_mail.setText(prefs.getString("User_email","null"));
         }
 
     }

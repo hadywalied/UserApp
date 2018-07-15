@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         // [START initialize_fblogin]
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
-        LoginButton loginButton = (LoginButton)findViewById(R.id.btn_facebook_Login);
+        LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions("email", "public_profile");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -179,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("User_name", user.getDisplayName());
             editor.putString("User_email", user.getEmail());
             editor.putString("User_phone", user.getPhoneNumber());
+            editor.putString("User_pp", String.valueOf(user.getPhotoUrl()));
             editor.apply();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
