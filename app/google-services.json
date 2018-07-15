@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "428757693802",
+    "firebase_url": "https://usercoworkapp.firebaseio.com",
+    "project_id": "usercoworkapp",
+    "storage_bucket": "usercoworkapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428757693802:android:f03ecf1a3d85d330",
+        "android_client_info": {
+          "package_name": "com.fekra.userapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428757693802-cdi2jojmd613d9hfviuc6l3lks9uhri3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fekra.userapp",
+            "certificate_hash": "18325b10302695d04ef144fc9874ebefbc57a25e"
+          }
+        },
+        {
+          "client_id": "428757693802-hrq8uqspl7g90soi7lbm0h4p6o8un2v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ2EapFcMYh1BkUOddRg3WW5umL55WulY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428757693802-hrq8uqspl7g90soi7lbm0h4p6o8un2v5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
