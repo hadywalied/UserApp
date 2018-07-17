@@ -26,10 +26,10 @@ import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private String MY_GLOBAL_PREFS= "MY_GLOBAL_PREFS";
+    private String MY_GLOBAL_PREFS = "MY_GLOBAL_PREFS";
 
     ImageView iv_profile;
-    TextView tv_name,tv_mail;
+    TextView tv_name, tv_mail;
 
 
     @Override
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-    CardDrawerLayout drawer = (CardDrawerLayout) findViewById(R.id.drawer_layout);
+        CardDrawerLayout drawer = (CardDrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -58,18 +58,18 @@ public class MainActivity extends AppCompatActivity
 
         drawer.setRadius(Gravity.START, 25);//set end container's corner radius (dimension)
 
-        iv_profile=findViewById(R.id.iv_profile_image);
-        tv_name=findViewById(R.id.tv_profile_name);
+        iv_profile = findViewById(R.id.iv_profile_image);
+        tv_name = findViewById(R.id.tv_profile_name);
         tv_mail = findViewById(R.id.tv_email);
 
 
         SharedPreferences prefs = getSharedPreferences(MY_GLOBAL_PREFS, MODE_PRIVATE);
         if (!prefs.getBoolean("Is_Logged_In", false)) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        }else{
-            Picasso.get().load(Uri.decode(prefs.getString("User_pp",null))).into(iv_profile);
-            tv_name.setText(prefs.getString("User_name","null"));
-            tv_mail.setText(prefs.getString("User_email","null"));
+        } else {
+            Picasso.get().load(Uri.parse(prefs.getString("User_pp", null))).into(iv_profile);
+            tv_name.setText(prefs.getString("User_name", "null"));
+            tv_mail.setText(prefs.getString("User_email", "null"));
         }
 
     }
@@ -85,13 +85,17 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_featured:
+                startActivity(new Intent(MainActivity.this,FeaturedActivity.class));
+                break;
 
+        }
 
 
         CardDrawerLayout drawer = (CardDrawerLayout) findViewById(R.id.drawer_layout);

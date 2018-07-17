@@ -195,6 +195,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_g_login:
                 signIn();
                 break;
+            case R.id.login_button:
+                signIn();
+                break;
             default:
                 break;
         }
