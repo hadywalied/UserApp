@@ -2,39 +2,56 @@ package Model;
 
 public class PlacesModel {
 
-    public static String placeName;
-    public static int placeId;
-    public static int coordinates;
-    public static int placePhoneNumber;
-    public static String offers;
-    public static String desc;
-    public static String photos ;
+    private String placeName;
+    private int placeId;
+    private int coordinates;
+    private int placePhoneNumber;
+    private String offers;
+    private String address;
+    private String desc;
+    private String photos;
 
-    public static String getPlaceName() {
+    public PlacesModel(String placeName,String address,int placeId, int coordinates, int placePhoneNumber, String offers, String desc, String photos) {
+
+        this.placeName = placeName;
+        this.placeId = placeId;
+        this.coordinates = coordinates;
+        this.placePhoneNumber = placePhoneNumber;
+        this.offers = offers;
+        this.desc = desc;
+        this.photos = photos;
+        this.address=address;
+    }
+
+    public String getPlaceName() {
         return placeName;
     }
 
-    public static int getPlaceId() {
+    public int getPlaceId() {
         return placeId;
     }
 
-    public static int getCoordinates() {
+    public int getCoordinates() {
         return coordinates;
     }
 
-    public static int getPlacePhoneNumber() {
+    public int getPlacePhoneNumber() {
         return placePhoneNumber;
     }
 
-    public static String getOffers() {
+    public String getOffers() {
         return offers;
     }
 
-    public static String getDesc() {
+    public String getDesc() {
         return desc;
     }
 
-    public static String getPhotos() {
+    public String getPhotos() {
         return photos;
+    }
+
+    public String getAddress() {
+        return address;
     }
 }
