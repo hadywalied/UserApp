@@ -48,7 +48,7 @@ public class FavouritesRecyclerAdapter extends RecyclerView.Adapter<FavouritesRe
         holder.tv_title.setText(model.getPlaceName());
         holder.tv_address.setText(model.getAddress());
 
-        Picasso.get().load(model.getPhotos()).into(holder.thumbnail);
+        Picasso.get().load(model.getPhotos().get(0)).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override

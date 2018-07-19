@@ -33,5 +33,10 @@
         android:id="@+id/tv_hours"
         />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_photos"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
 
 </android.support.v4.widget.NestedScrollView>

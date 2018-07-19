@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 public class PlacesModel {
 
     private String placeName;
@@ -9,9 +11,9 @@ public class PlacesModel {
     private String offers;
     private String address;
     private String desc;
-    private String photos;
+    private List<String> photos;
 
-    public PlacesModel(String placeName,String address,int placeId, int coordinates, int placePhoneNumber, String offers, String desc, String photos) {
+    public PlacesModel(String placeName,String address,int placeId, int coordinates, int placePhoneNumber, String offers, String desc, List<String> photos) {
 
         this.placeName = placeName;
         this.placeId = placeId;
@@ -47,7 +49,7 @@ public class PlacesModel {
         return desc;
     }
 
-    public String getPhotos() {
+    public List<String> getPhotos() {
         return photos;
     }
 
