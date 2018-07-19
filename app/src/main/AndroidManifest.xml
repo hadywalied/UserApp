@@ -54,8 +54,20 @@
                 android:name="android:support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".DetailsScrollingActivity"
+            android:label="@string/title_activity_details_scrolling"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android:support.PARENT_ACTIVITY"
+                android:value=".FeaturedActivity" />
+        </activity>
+        <activity android:name=".MapActivity">
+            <meta-data
+                android:name="android:support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
-
+        </activity>
     </application>
 
 </manifest>

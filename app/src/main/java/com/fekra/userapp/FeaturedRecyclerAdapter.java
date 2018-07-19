@@ -1,6 +1,7 @@
 package com.fekra.userapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.ColorSpace;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +23,8 @@ public class FeaturedRecyclerAdapter extends RecyclerView.Adapter<FeaturedRecycl
 
     private Context mContext;
     private List<PlacesModel> Places;
+    PlacesModel model;
+
 
     public FeaturedRecyclerAdapter(Context context, List<PlacesModel> mPlaces) {
 
@@ -42,7 +45,8 @@ public class FeaturedRecyclerAdapter extends RecyclerView.Adapter<FeaturedRecycl
     @Override
     public void onBindViewHolder(@NonNull myVH holder, int position) {
 
-        PlacesModel model = Places.get(position);
+
+        model = Places.get(position);
 
         holder.title.setText(model.getPlaceName());
         holder.address.setText(model.getAddress());
@@ -52,7 +56,12 @@ public class FeaturedRecyclerAdapter extends RecyclerView.Adapter<FeaturedRecycl
         holder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //show details
+                Intent intent = new Intent(mContext,DetailsScrollingActivity.class);
+                intent.putExtra("Photo",model.getPhotos());
+                intent.putExtra("name",model.getPlaceName());
+                intent.putExtra("desc",model.getDesc());
+                //add what you need also
+                mContext.startActivity(intent);
             }
         });
     }

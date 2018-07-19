@@ -12,6 +12,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="LoginStyle" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
