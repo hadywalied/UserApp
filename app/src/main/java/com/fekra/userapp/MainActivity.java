@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences prefs = getSharedPreferences(MY_GLOBAL_PREFS, MODE_PRIVATE);
         if (!prefs.getBoolean("Is_Logged_In", false)) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         } else {
             Picasso.get().load(Uri.parse(prefs.getString("User_pp", null))).into(iv_profile);
             tv_name.setText(prefs.getString("User_name", "null"));
