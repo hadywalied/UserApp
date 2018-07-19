@@ -53,7 +53,7 @@ public class DetailsScrollingActivity extends AppCompatActivity {
         offers= findViewById(R.id.tv_offers);
         hours= findViewById(R.id.tv_hours);
 
-        //get the data from the api and place them in the text views 
+        //get the data from the api and place them in the text views
 
     }
 }
