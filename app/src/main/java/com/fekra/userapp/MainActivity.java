@@ -93,9 +93,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.nav_featured:
-                startActivity(new Intent(MainActivity.this,FeaturedActivity.class));
+                startActivity(new Intent(MainActivity.this, FeaturedActivity.class));
                 break;
-
+            case R.id.nav_favourites:
+                startActivity(new Intent(MainActivity.this, favouritesActivity.class));
+                break;
+            case R.id.nav_map:
+                startActivity(new Intent(MainActivity.this,MapActivity.class));
+                break;
+            case R.id.nav_logout:
+                SharedPreferences.Editor editor = getSharedPreferences(MY_GLOBAL_PREFS, MODE_PRIVATE).edit();
+                editor.putBoolean("Is_Logged_In", false);
+                editor.apply();
+                onRestart();
         }
 
 
